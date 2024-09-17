@@ -1,3 +1,3 @@
-# learn_go
+# learn_java
 
-本文件为go语言学习资料与部分代码
+本文件为java语言学习资料与部分代码

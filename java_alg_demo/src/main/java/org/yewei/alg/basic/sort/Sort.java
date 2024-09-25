@@ -1,4 +1,4 @@
-package org.yewei.alg.algpart.sort;
+package org.yewei.alg.basic.sort;
 
 public class Sort {
 
@@ -71,10 +71,30 @@ public class Sort {
 
     }
 
+    /**
+     * 快速排序
+     * 其目标是：选择数组中的某个元素作为“基准数”，将所有小于基准数的元素移到其左侧，而大于基准数的元素移到其右侧。
+     *
+     *
+     * 选取数组最左端元素作为基准数，初始化两个指针 i 和 j 分别指向数组的两端。
+     * 设置一个循环，在每轮中使用 i（j）分别寻找第一个比基准数大（小）的元素，然后交换这两个元素。
+     * 循环执行步骤 2. ，直到 i 和 j 相遇时停止，最后将基准数交换至两个子数组的分界线。
+     */
+    public void quickSort(int[] nums) {
+
+
+
+    }
+
 
     /**
      * 归并排序
      */
+    public void merageSort(int[] nums) {
+
+
+
+    }
 
 
 

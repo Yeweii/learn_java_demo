@@ -1,4 +1,4 @@
-package org.yewei.alg.module.tree;
+package org.yewei.alg.basic.tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

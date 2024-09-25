@@ -1,4 +1,4 @@
-package org.yewei.alg.algpart.tree;
+package org.yewei.alg.basic.tree;
 
 public class TreeNode {
 

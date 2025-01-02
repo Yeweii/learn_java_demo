@@ -1,5 +1,10 @@
 package org.yewei.alg.algpart.sort;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Sort {
 
     /**
@@ -75,6 +80,63 @@ public class Sort {
     /**
      * 归并排序
      */
+
+
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
+            }
+        }
+
+
+        for (int i = 0; i < t.length(); i++) {
+            char c = t.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) - 1);
+            } else {
+                return false;
+            }
+        }
+
+        for (Map.Entry<Character, Integer> characterIntegerEntry : map.entrySet()) {
+            Integer value = characterIntegerEntry.getValue();
+            if (value != null && value == 0) return false;
+        }
+        return true;
+    }
+
+
+    public int firstUniqChar(String s) {
+
+        Map<Character, Integer> map = new HashMap<>();
+        List<Character> list = new ArrayList<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (map.containsKey(c)) {
+                map.remove(c);
+                list.add(c);
+            }  else {
+                if (!list.contains(c)) {
+                    map.put(c, i);
+                }
+            }
+        }
+
+        Integer val= -1;
+        for (Map.Entry<Character, Integer> characterIntegerEntry : map.entrySet()) {
+            Integer value = characterIntegerEntry.getValue();
+            val = val  == -1 ? value : val > value ? value : val;
+        }
+
+
+        return val;
+    }
 
 
 

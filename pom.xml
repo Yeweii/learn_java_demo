@@ -18,4 +18,20 @@
         <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.13</artifactId>
+            <version>3.5.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+    </dependencies>
+
 </project>

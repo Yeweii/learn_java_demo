@@ -1,5 +1,7 @@
 package org.yewei.alg.basic.search;
 
+import java.util.Arrays;
+
 public class BinarySearch {
     /**
      * 给定一个长度为 n 的数组 nums ，元素按从小到大的顺序排列且不重复。
@@ -27,6 +29,15 @@ public class BinarySearch {
         // 未找到目标元素返回-1
         return -1;
     }
+
+    public static void main(String[] args) {
+        int [] a = {1, 7, 11, 22, 45, 78, 134,1345};
+        BinarySearch binarySearch = new BinarySearch();
+        int i = binarySearch.binarySearch(a, 78);
+        System.out.println(i);
+    }
+
+
 
 
 }

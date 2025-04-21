@@ -3,7 +3,9 @@ package org.yewei.alg.basic.backtracing;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class BackTracingAlg {
 
@@ -38,6 +40,42 @@ public class BackTracingAlg {
             }
         }
     }
+
+    /**
+     * 输入一个整数数组，其中包含重复元素，返回所有可能的排列。
+     * @param state
+     * @param choices
+     * @param selected
+     * @param res
+     */
+    public void backtrack2(List<Integer> state, int[] choices, boolean[] selected, List<List<Integer>> res) {
+
+        // 当状态长度 = 元素数量时， 记录解
+        if (state.size() == choices.length) {
+            res.add(new ArrayList<>(state));
+            return;
+        }
+
+        // 遍历所有选择
+        Set<Integer> duplicated = new HashSet<>();
+        for (int i = 0; i < choices.length; i++) {
+            int choice = choices[i];
+            // 剪枝，不允许重复选择元素
+            if (!selected[i] && !duplicated.contains(choice)) {
+                // 尝试：做出选择，更新状态
+                duplicated.add(choice);
+                selected[i] = true;
+                state.add(choice);
+                // 在进行下一轮选择
+                backtrack(state, choices, selected, res);
+                // 回退： 撤销选择，恢复到之前的状态
+                selected[i] = false;
+                state.remove(state.size() - 1);
+            }
+        }
+    }
+
+
 
     /* 全排列 I */
     List<List<Integer>> permutationsI(int[] nums) {

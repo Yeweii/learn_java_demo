@@ -17,7 +17,8 @@ public class BinarySearch {
             //mid=(left+right)/2
             //mid=left+(right-left)/2
             //mid= left + ((right-left) >> 1
-            int m = i + (j - i) / 2; // 计算中点索引m
+            // 计算中点索引m
+            int m = i + (j - i) / 2;
             if (nums[m] < target) {
                 i = m + 1;
             } else if (nums[m] > target) {
